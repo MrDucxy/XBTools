@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xbtools"
         mc:Ignorable="d"
-        Title="XBTools Beta" Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True">
+        Title="XBTools Beta" Height="500" Width="875" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True">
     <Border Name="mainPanel" Background="#141414" Margin="5" CornerRadius="6">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="0"/>
         </Border.Effect>
         <Grid Name="mainGrid">
             <!--#region Top Bar-->
-            <Border Name="topBorder" Background="#1e1e1e" Margin="0,0,0,410" CornerRadius="6" VerticalAlignment="Top">
+            <Border Name="topBorder" Background="#1e1e1e" Height="30" Margin="0,0,0,410" CornerRadius="6" VerticalAlignment="Top" HorizontalAlignment="Stretch">
                 <Grid Name="topGrid">
-                    <Image RenderOptions.BitmapScalingMode="HighQuality" Source="Assets/xboxWhitePNG.png" Margin="0,0,760,0"/>
+                    <Image RenderOptions.BitmapScalingMode="HighQuality" Source="Assets/xboxWhitePNG.png" Margin="0,0,760,0" HorizontalAlignment="Left"/>
                     <!--#region Menu Items-->
                     <Menu Background="Transparent" Foreground="White" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="680" Margin="30,0,0,0">
                         <!--#region Tools-->
@@ -46,10 +46,10 @@
             <!--#region Nand Flashing-->
             <GroupBox Name="nandGB" Header="Nand Flashing" Foreground="Gray" HorizontalAlignment="Left" Height="80" Margin="10,40,0,0" VerticalAlignment="Top" Width="440" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
                 <Grid Margin="0,30,0,0">
-                    <Button Name="readNandBtn" Content="Read Nand" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
-                    <Button Name="writeNandBtn" Content="Write Nand" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button Name="readNandBtn" Content="Read Nand" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand" IsEnabled="False"/>
+                    <Button Name="writeNandBtn" Content="Write Nand" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand" IsEnabled="False"/>
                     <Button Name="createEccBtn" Content="Create ECC" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
-                    <Button Name="writeEccBtn" Content="Write ECC" HorizontalAlignment="Left" Margin="295,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button Name="writeEccBtn" Content="Write ECC" HorizontalAlignment="Left" Margin="295,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand" IsEnabled="False"/>
                     <Button Name="createXebuildBtn" Content="XEBuild" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
                     <RadioButton Name="oneDumpRadio" Content="1 Dump" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
                     <RadioButton Name="twoDumpRadio" Content="2 Dumps" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White" IsChecked="True"/>
@@ -66,7 +66,7 @@
                     <Button x:Name="compareNandBtn" Content="Compare&#x0a;Nands" HorizontalAlignment="Left" Margin="372,10,0,0" VerticalAlignment="Top" Width="58" Height="47" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
                     <TextBox x:Name="cpuKeyTB" HorizontalAlignment="Left" Margin="80,62,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="287" Style="{DynamicResource textBoxStyle}" Height="21" Background="#FF232323" BorderBrush="#FF373737" Foreground="Gray"/>
                     <Label Foreground="White" Content="CPU Key" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="65"/>
-                    <Button x:Name="refreshBtn" Content="Refresh" HorizontalAlignment="Left" Margin="372,62,0,0" VerticalAlignment="Top" Width="58" Height="21" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button x:Name="reloadBtn" Content="Reload" HorizontalAlignment="Left" Margin="372,62,0,0" VerticalAlignment="Top" Width="58" Height="21" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
                 </Grid>
             </GroupBox>
             <!--#endregion-->
@@ -76,14 +76,76 @@
                     <RichTextBox Name="consoleTB" Background="Transparent" BorderThickness="0" Foreground="White" Margin="0,0,0,40" IsReadOnly="True">
                         <FlowDocument>
                             <Paragraph>
-                                <Run Text="Welcome to XBTools Beta - 0.0.1"/>
+                                <Run Text="Welcome to XBTools Beta - 0.0.1&#x0a;Certain functions are disabled until XBTools detects a NAND flasher."/>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
                     <Button x:Name="clearConsoleBtn" Content="Clear Console" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
                     <Button x:Name="saveConsoleBtn" Content="Save Console" HorizontalAlignment="Left" Margin="90,165,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
-                    <ProgressBar x:Name="mainProgressBar" HorizontalAlignment="Left" Height="25" Margin="170,165,0,0" VerticalAlignment="Top" Width="210" Background="#FF232323" BorderBrush="#FF373737" Foreground="{x:Null}" Value="50"/>
-                    <Label Name="currentBlockLabel" Foreground="White" Content="FFF" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="385,165,0,0" VerticalAlignment="Top" Width="45" Height="25"/>
+                    <ProgressBar x:Name="mainProgressBar" HorizontalAlignment="Left" Height="20" Margin="170,167,0,0" VerticalAlignment="Top" Width="260" Background="#FF232323" BorderBrush="#FF373737" Foreground="{x:Null}"/>
+                    <Label x:Name="progressBarLabel" Foreground="White" Content="Progress" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="170,164,0,0" VerticalAlignment="Top" Width="260" Height="26"/>
+
+                </Grid>
+            </GroupBox>
+            <!--#endregion-->
+            <!--#region XEBuild-->
+            <GroupBox Name="xebuildGB" Header="XEBuild" Foreground="Gray" HorizontalAlignment="Left" Height="175" Margin="455,40,0,0" VerticalAlignment="Top" Width="400" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
+                <Grid Margin="0,30,0,0">
+                    <TabControl BorderThickness="0" Style="{DynamicResource modernTabs}" Background="{x:Null}">
+                        <!--#region XEBuild-->
+                        <TabItem Header="XEBuild" Style="{DynamicResource niceTabs}">
+                            <Grid Background="Transparent">
+                                <Label Foreground="White" Content="Kernel Version" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
+                                <ComboBox Name="kernelVerBox" HorizontalAlignment="Left" Margin="14,33,0,0" VerticalAlignment="Top" Width="85"/>
+                                <Label Foreground="White" Content="CB" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="271,9,0,0" VerticalAlignment="Top" Width="25" Height="23"/>
+                                <ComboBox Name="cbBox" HorizontalAlignment="Left" Margin="301,10,0,0" VerticalAlignment="Top" Width="85"/>
+                                <Label Foreground="White" Content="Console Type" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
+                                <TextBox x:Name="typeTB" HorizontalContentAlignment="Center" IsReadOnly="True" Style="{DynamicResource textBoxStyle}" HorizontalAlignment="Left" Margin="14,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="21" Background="#FF232323" BorderBrush="#FF373737" Foreground="Gray" Text="None"/>
+                                <Button x:Name="getNandTypeBtn" Content="?" HorizontalAlignment="Left" Margin="119,82,0,0" VerticalAlignment="Top" Width="20" Height="21" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                                <RadioButton x:Name="glitch2mRadio" IsEnabled="False" Content="Glitch 2m" HorizontalAlignment="Left" Margin="159,58,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+                                <RadioButton x:Name="glitch2Radio" IsEnabled="False" Content="Glitch 2" HorizontalAlignment="Left" Margin="159,42,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+                                <RadioButton x:Name="retailRadio" IsEnabled="False" Content="Retail" HorizontalAlignment="Left" Margin="159,11,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+                                <RadioButton x:Name="devglRadio" IsEnabled="False" Content="DEVGL" HorizontalAlignment="Left" Margin="159,90,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+                                <RadioButton x:Name="glitchRadio" IsEnabled="False" Content="Glitch" HorizontalAlignment="Left" Margin="159,26,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+                                <RadioButton x:Name="jtagRadio" IsEnabled="False" Content="JTAG" HorizontalAlignment="Left" Margin="159,74,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+
+                                <CheckBox Name="cr4CheckBox" IsEnabled="False" Content="CR4" HorizontalAlignment="Left" Margin="339,40,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="smcCheckBox" IsEnabled="False" Content="SMC+" HorizontalAlignment="Left" Margin="339,56,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="rgh3CheckBox" IsEnabled="False" Content="RGH3" HorizontalAlignment="Left" Margin="339,72,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="cleansmcCheckBox" IsEnabled="False" Content="Clean SMC" HorizontalAlignment="Left" Margin="260,56,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="wb2kCheckBox" IsEnabled="False" Content="WB 2K" HorizontalAlignment="Left" Margin="260,40,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="rjtagCheckBox" IsEnabled="False" Content="R-JTAG" HorizontalAlignment="Left" Margin="260,88,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="aClampCheckBox" IsEnabled="False" Content="Aud Clamp" HorizontalAlignment="Left" Margin="260,72,0,0" VerticalAlignment="Top" Foreground="White"/>
+                                <CheckBox x:Name="xdkCheckBox" IsEnabled="False" Content="XDKB" HorizontalAlignment="Left" Margin="339,88,0,0" VerticalAlignment="Top" Foreground="White"/>
+                            </Grid>
+                        </TabItem>
+                        <!--#endregion-->
+                        <!--#region XBSettings-->
+                        <TabItem Header="XB Settings" Style="{DynamicResource niceTabs}"/>
+                        <!--#endregion-->
+                        <!--#region Patches-->
+                        <TabItem Header="Patches" Style="{DynamicResource niceTabs}">
+                            <Grid Background="Transparent"/>
+                        </TabItem>
+                        <!--#endregion-->
+                        <!--#region Update Mode-->
+                        <TabItem Header="Update Mode" Style="{DynamicResource niceTabs}">
+                            <Grid Background="Transparent"/>
+                        </TabItem>
+                        <!--#endregion-->
+                        <!--#region Client Mode-->
+                        <TabItem Header="Client Mode" Style="{DynamicResource niceTabs}">
+                            <Grid Background="Transparent"/>
+                        </TabItem>
+                        <!--#endregion-->
+                    </TabControl>
+
+                </Grid>
+            </GroupBox>
+            <!--#endregion-->
+            <!--#region Other-->
+            <GroupBox Name="otherGB" Header="Other" Foreground="Gray" HorizontalAlignment="Left" Height="260" Margin="455,220,0,0" VerticalAlignment="Top" Width="400" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
+                <Grid Margin="0,30,0,0">
 
                 </Grid>
             </GroupBox>
