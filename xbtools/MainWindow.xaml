@@ -1,0 +1,93 @@
+﻿<Window x:Class="xbtools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xbtools"
+        mc:Ignorable="d"
+        Title="XBTools Beta" Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True">
+    <Border Name="mainPanel" Background="#141414" Margin="5" CornerRadius="6">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0"/>
+        </Border.Effect>
+        <Grid Name="mainGrid">
+            <!--#region Top Bar-->
+            <Border Name="topBorder" Background="#1e1e1e" Margin="0,0,0,410" CornerRadius="6" VerticalAlignment="Top">
+                <Grid Name="topGrid">
+                    <Image RenderOptions.BitmapScalingMode="HighQuality" Source="Assets/xboxWhitePNG.png" Margin="0,0,760,0"/>
+                    <!--#region Menu Items-->
+                    <Menu Background="Transparent" Foreground="White" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="680" Margin="30,0,0,0">
+                        <!--#region Tools-->
+                        <MenuItem Height="30">
+                            <MenuItem.Header>
+                                <TextBlock Text="Tools" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region Nand-->
+                        <MenuItem Height="30">
+                            <MenuItem.Header>
+                                <TextBlock Text="Nand" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region Advanced-->
+                        <MenuItem Height="30">
+                            <MenuItem.Header>
+                                <TextBlock Text="Advanced" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                    </Menu>
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
+            <!--#region Nand Flashing-->
+            <GroupBox Name="nandGB" Header="Nand Flashing" Foreground="Gray" HorizontalAlignment="Left" Height="80" Margin="10,40,0,0" VerticalAlignment="Top" Width="440" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
+                <Grid Margin="0,30,0,0">
+                    <Button Name="readNandBtn" Content="Read Nand" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button Name="writeNandBtn" Content="Write Nand" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button Name="createEccBtn" Content="Create ECC" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button Name="writeEccBtn" Content="Write ECC" HorizontalAlignment="Left" Margin="295,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button Name="createXebuildBtn" Content="XEBuild" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top" Width="65" Height="30" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <RadioButton Name="oneDumpRadio" Content="1 Dump" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White"/>
+                    <RadioButton Name="twoDumpRadio" Content="2 Dumps" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Foreground="#FF646464" Background="White" IsChecked="True"/>
+                </Grid>
+            </GroupBox>
+            <!--#endregion-->
+            <!--#region Nand Sources-->
+            <GroupBox Name="sourceGB" Header="Load Nand Dumps" Foreground="Gray" HorizontalAlignment="Left" Height="120" Margin="10,125,0,0" VerticalAlignment="Top" Width="440" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
+                <Grid Margin="0,30,0,0">
+                    <Button x:Name="loadSrcBtn" Content="Load Nand" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="65" Height="21" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button x:Name="loadExtraBtn" Content="Load Extra" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="65" Height="21" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <TextBox x:Name="nandSrcTB" Style="{DynamicResource textBoxStyle}" HorizontalAlignment="Left" Margin="80,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287" Height="21" Background="#FF232323" BorderBrush="#FF373737" Foreground="Gray"/>
+                    <TextBox x:Name="nandExtraTB" HorizontalAlignment="Left" Margin="80,36,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="287" Style="{DynamicResource textBoxStyle}" Height="21" Background="#FF232323" BorderBrush="#FF373737" Foreground="Gray"/>
+                    <Button x:Name="compareNandBtn" Content="Compare&#x0a;Nands" HorizontalAlignment="Left" Margin="372,10,0,0" VerticalAlignment="Top" Width="58" Height="47" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <TextBox x:Name="cpuKeyTB" HorizontalAlignment="Left" Margin="80,62,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="287" Style="{DynamicResource textBoxStyle}" Height="21" Background="#FF232323" BorderBrush="#FF373737" Foreground="Gray"/>
+                    <Label Foreground="White" Content="CPU Key" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="65"/>
+                    <Button x:Name="refreshBtn" Content="Refresh" HorizontalAlignment="Left" Margin="372,62,0,0" VerticalAlignment="Top" Width="58" Height="21" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                </Grid>
+            </GroupBox>
+            <!--#endregion-->
+            <!--#region Console-->
+            <GroupBox Name="consoleGB" Header="Console" Foreground="Gray" HorizontalAlignment="Left" Height="230" Margin="10,250,0,0" VerticalAlignment="Top" Width="440" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
+                <Grid Margin="0,30,0,0">
+                    <RichTextBox Name="consoleTB" Background="Transparent" BorderThickness="0" Foreground="White" Margin="0,0,0,40" IsReadOnly="True">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text="Welcome to XBTools Beta - 0.0.1"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Button x:Name="clearConsoleBtn" Content="Clear Console" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <Button x:Name="saveConsoleBtn" Content="Save Console" HorizontalAlignment="Left" Margin="90,165,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
+                    <ProgressBar x:Name="mainProgressBar" HorizontalAlignment="Left" Height="25" Margin="170,165,0,0" VerticalAlignment="Top" Width="210" Background="#FF232323" BorderBrush="#FF373737" Foreground="{x:Null}" Value="50"/>
+                    <Label Name="currentBlockLabel" Foreground="White" Content="FFF" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="385,165,0,0" VerticalAlignment="Top" Width="45" Height="25"/>
+
+                </Grid>
+            </GroupBox>
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,17 @@
+C:\Users\Ducxy\source\repos\xbtools\xbtools\bin\Debug\xbtools.exe.config
+C:\Users\Ducxy\source\repos\xbtools\xbtools\bin\Debug\xbtools.exe
+C:\Users\Ducxy\source\repos\xbtools\xbtools\bin\Debug\xbtools.pdb
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\MainWindow.g.cs
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\App.g.cs
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools_MarkupCompile.cache
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools_MarkupCompile.lref
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\MainWindow.baml
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.g.resources
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.Properties.Resources.resources
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.csproj.GenerateResource.cache
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.csproj.CoreCompileInputs.cache
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.exe
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.pdb
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\App.baml
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.csproj.AssemblyReference.cache
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.csproj.SuggestedBindingRedirects.cache
