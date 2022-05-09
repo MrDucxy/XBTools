@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xbtools"
         mc:Ignorable="d"
-        Title="XBTools Beta" Height="500" Width="875" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True">
+        Title="XBTools Beta" Height="500" Width="875" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True" Loaded="Window_Loaded">
     <Border Name="mainPanel" Background="#141414" Margin="5" CornerRadius="6">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="0"/>
@@ -16,7 +16,7 @@
                 <Grid Name="topGrid">
                     <Image RenderOptions.BitmapScalingMode="HighQuality" Source="Assets/xboxWhitePNG.png" Margin="0,0,760,0" HorizontalAlignment="Left"/>
                     <!--#region Menu Items-->
-                    <Menu Background="Transparent" Foreground="White" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="680" Margin="30,0,0,0">
+                    <Menu Background="Transparent" Foreground="White" HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" Width="600" Margin="30,0,0,0">
                         <!--#region Tools-->
                         <MenuItem Height="30">
                             <MenuItem.Header>
@@ -35,6 +35,41 @@
                         <MenuItem Height="30">
                             <MenuItem.Header>
                                 <TextBlock Text="Advanced" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region xFlasher-->
+                        <MenuItem Name="xFlasherMenuItem" Height="30" Visibility="Hidden">
+                            <MenuItem.Header>
+                                <TextBlock Text="xFlasher" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region NAND-X-->
+                        <MenuItem Name="nandxMenuItem" Height="30" Visibility="Hidden">
+                            <MenuItem.Header>
+                                <TextBlock Text="NAND-X" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region JR-P Normal-->
+                        <MenuItem Name="jrpNormalMenuItem" Height="30" Visibility="Hidden">
+                            <MenuItem.Header>
+                                <TextBlock Text="JR-P" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region JR-P Bootloader-->
+                        <MenuItem Name="jrpBLMenuItem" Height="30" Visibility="Hidden">
+                            <MenuItem.Header>
+                                <TextBlock Text="JR-P" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <!--#endregion-->
+                        <!--#region DemoN-->
+                        <MenuItem Name="demonMenuItem" Height="30" Visibility="Hidden">
+                            <MenuItem.Header>
+                                <TextBlock Text="DemoN" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="/xbtools;component/Assets/Fonts/#Cabin"/>
                             </MenuItem.Header>
                         </MenuItem>
                         <!--#endregion-->
@@ -73,17 +108,12 @@
             <!--#region Console-->
             <GroupBox Name="consoleGB" Header="Console" Foreground="Gray" HorizontalAlignment="Left" Height="230" Margin="10,250,0,0" VerticalAlignment="Top" Width="440" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
                 <Grid Margin="0,30,0,0">
-                    <RichTextBox Name="consoleTB" Background="Transparent" BorderThickness="0" Foreground="White" Margin="0,0,0,40" IsReadOnly="True">
-                        <FlowDocument>
-                            <Paragraph>
-                                <Run Text="Welcome to XBTools Beta - 0.0.1&#x0a;Certain functions are disabled until XBTools detects a NAND flasher."/>
-                            </Paragraph>
-                        </FlowDocument>
-                    </RichTextBox>
+                    <TextBox Name="consoleTB" Background="Transparent" BorderThickness="0" Foreground="White" Margin="0,0,0,40" IsReadOnly="True"/>
                     <Button x:Name="clearConsoleBtn" Content="Clear Console" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
                     <Button x:Name="saveConsoleBtn" Content="Save Console" HorizontalAlignment="Left" Margin="90,165,0,0" VerticalAlignment="Top" Width="75" Height="25" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Cursor="Hand"/>
-                    <ProgressBar x:Name="mainProgressBar" HorizontalAlignment="Left" Height="20" Margin="170,167,0,0" VerticalAlignment="Top" Width="260" Background="#FF232323" BorderBrush="#FF373737" Foreground="{x:Null}"/>
-                    <Label x:Name="progressBarLabel" Foreground="White" Content="Progress" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="170,164,0,0" VerticalAlignment="Top" Width="260" Height="26"/>
+                    <ProgressBar x:Name="mainProgressBar" HorizontalAlignment="Left" Height="20" Margin="170,167,0,0" VerticalAlignment="Top" Width="200" Background="#FF232323" BorderBrush="#FF373737" Foreground="{x:Null}"/>
+                    <Label x:Name="progressBarLabel" Foreground="White" Content="Progress" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="170,164,0,0" VerticalAlignment="Top" Width="200" Height="26"/>
+                    <Label x:Name="txtBlocks" Foreground="White" Content="FFF" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="370,164,0,0" VerticalAlignment="Top" Width="70" Height="26"/>
 
                 </Grid>
             </GroupBox>
@@ -145,7 +175,7 @@
             <!--#endregion-->
             <!--#region Other-->
             <GroupBox Name="otherGB" Header="Other" Foreground="Gray" HorizontalAlignment="Left" Height="260" Margin="455,220,0,0" VerticalAlignment="Top" Width="400" Style="{DynamicResource GroupBoxStyle}" BorderBrush="White" FontFamily="/xbtools;component/Assets/Fonts/#Cabin">
-                <Grid Margin="0,30,0,0">
+                <Grid Name="otherGrid" Margin="0,30,0,0">
 
                 </Grid>
             </GroupBox>

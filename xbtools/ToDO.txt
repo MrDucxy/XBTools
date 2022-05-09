@@ -1,0 +1,6 @@
+﻿Add CB_Fuse to Nand Namespace.
+Add extra panels (ldInfo, Nand Info, Etc.)
+Move code from Nand, CPU and XEBuild panels into MainWindow.
+Add buttons to Menubar dropdowns
+
+CHECK FOR BUGS ON LDINFO PANEL (rewritten for WPF listview)

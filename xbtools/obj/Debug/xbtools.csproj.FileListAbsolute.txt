@@ -15,3 +15,4 @@ C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.pdb
 C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\App.baml
 C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.csproj.AssemblyReference.cache
 C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\xbtools.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ducxy\source\repos\xbtools\xbtools\obj\Debug\Nand\VNandForm.g.cs

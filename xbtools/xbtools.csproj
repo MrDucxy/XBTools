@@ -35,9 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>..\..\..\..\Desktop\J-Runner-with-Extras-master\J-Runner\LibUsbDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,6 +61,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\HID.cs" />
+    <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Classes\xFlasher.cs" />
+    <Compile Include="DemoN\DemoN.cs" />
+    <Compile Include="DemoN\Nands.cs" />
+    <Compile Include="HID\HidAsyncState.cs" />
+    <Compile Include="HID\HidDevice.cs" />
+    <Compile Include="HID\HidDeviceAttributes.cs" />
+    <Compile Include="HID\HidDeviceCapabilities.cs" />
+    <Compile Include="HID\HidDeviceData.cs" />
+    <Compile Include="HID\HidDeviceEventMonitor.cs" />
+    <Compile Include="HID\HidDevices.cs" />
+    <Compile Include="HID\HidReport.cs" />
+    <Compile Include="HID\NativeMethods.cs" />
+    <Compile Include="Nand\ECC.cs" />
+    <Compile Include="Nand\PatchParser.cs" />
+    <Compile Include="Nand\table.cs" />
+    <Compile Include="Nand\VNand.cs" />
+    <Compile Include="Nand\VNandForm.xaml.cs">
+      <DependentUpon>VNandForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\DiskManagement.cs" />
+    <Compile Include="Panels\LDrivesInfo.xaml.cs">
+      <DependentUpon>LDrivesInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\NandInfo.xaml.cs">
+      <DependentUpon>NandInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinUSB\DeviceManagement.cs" />
+    <Compile Include="WinUSB\DeviceManagementAPI.cs" />
+    <Compile Include="WinUSB\FileIOApi.cs" />
+    <Compile Include="WinUSB\WinUSBDevice.cs" />
+    <Compile Include="WinUSB\WinUSBDeviceApi.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,12 +102,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\IP.cs" />
+    <Compile Include="Classes\Oper.cs" />
+    <Compile Include="Classes\variables.cs" />
+    <Compile Include="Functions\Consoledir.cs" />
+    <Compile Include="Functions\CRC32.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Nand\VNandForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\LDrivesInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\NandInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Nand\BadBlock.cs" />
+    <Compile Include="Nand\Nand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,6 +157,17 @@
   <ItemGroup>
     <Resource Include="Assets\xboxWhitePNG.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\chime.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodbye.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ToDO.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

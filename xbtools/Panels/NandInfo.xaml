@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="xbtools.Panels.NandInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:xbtools.Panels"
+             mc:Ignorable="d" 
+             d:DesignHeight="230" d:DesignWidth="400" FontFamily="Cabin">
+    <TabControl x:Name="tabControl1" Style="{DynamicResource modernTabs}" Background="{x:Null}" BorderThickness="0">
+        <TabItem Header="Nand Info" Style="{DynamicResource niceTabs}">
+            <Grid Background="Transparent">
+                <TextBox x:Name="textBoxConsole" VerticalContentAlignment="Center" Margin="81,37,245,146" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox7BL_p0" VerticalContentAlignment="Center" Margin="241,52,85,131" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox6BL_p0" VerticalContentAlignment="Center" Margin="241,26,85,157" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox5BL" VerticalContentAlignment="Center" Margin="81,141,245,42" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox4BL" VerticalContentAlignment="Center" Margin="81,115,245,68" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox2BLb" VerticalContentAlignment="Center" Margin="81,89,245,94" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox2BLa" VerticalContentAlignment="Center" Margin="81,63,245,120" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox7BL_p1" VerticalContentAlignment="Center" Margin="316,52,10,131" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBox6BL_p1" VerticalContentAlignment="Center" Margin="316,26,10,157" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+
+                <Label Content="Console" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label x:Name="label2bla" Content="2BL [CB A]" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label x:Name="label2blb" Content="2BL [CB B]" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label Content="4BL [CD]" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label Content="5BL [CE]" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+
+                <Label Content="7BL [CG]" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="170,52,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label Content="6BL [CF]" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="170,26,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label Content="Patch 0" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="241,3,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="70"/>
+                <Label Content="Patch 1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="316,3,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="70"/>
+                <TextBox x:Name="textBoxldv_0" VerticalContentAlignment="Center" Margin="261,81,85,103" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxpd_0" VerticalContentAlignment="Center" Margin="241,108,85,77" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxldv_1" VerticalContentAlignment="Center" Margin="336,81,10,103" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxpd_1" VerticalContentAlignment="Center" Margin="316,108,10,77" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <Label Content="LDV" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="190,81,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+                <Label Content="PD" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="170,106,0,0" VerticalAlignment="Top" Height="24" Foreground="White" Width="66"/>
+
+                <TextBox x:Name="textBoxCbType" VerticalContentAlignment="Center" Margin="241,148,85,36" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <Label Content="CB Type" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="170,148,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <TextBox x:Name="textBoxpd_cb" VerticalContentAlignment="Center" Margin="241,173,85,13" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <Label Content="PD" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="210,171,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="26"/>
+                <TextBox x:Name="textBoxldv_cb" VerticalContentAlignment="Center" Margin="343,173,10,12" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <Label Content="LDV" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="311,171,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="32"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="KV Info" Style="{DynamicResource niceTabs}">
+            <Grid Background="Transparent">
+                <Label Content="Console" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="66"/>
+                <Label Content="KV Type" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+
+                <TextBox x:Name="textBoxConsole2" VerticalContentAlignment="Center" Margin="81,10,245,173" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxKVType" VerticalContentAlignment="Center" Margin="81,36,280,148" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxConsoleID" Margin="81,61,175,123" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxSerial" Margin="81,86,175,99" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxRegion" Margin="81,110,175,75" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxOSIG" Margin="81,134,65,52" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxDVDKey"  Margin="81,157,65,30" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+                <TextBox x:Name="textBoxMFRDate" VerticalContentAlignment="Center" Margin="81,179,245,8" Style="{DynamicResource textBoxStyle}" Foreground="Gray"/>
+
+                <Label Content="Console ID" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="76"/>
+                <Label Content="Serial" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+                <Label Content="Region" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+                <Label Content="OSIG" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+                <Label Content="DVD Key" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+                <Label Content="MFR Date" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Height="22" Foreground="White" Width="66"/>
+                <Label x:Name="fcrtLabel" Content="FCRT Required" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="121,36,0,0" VerticalAlignment="Top" Height="23" Foreground="White" Width="100"/>
+                <Button Name="viewButton" Content="View: Native" HorizontalAlignment="Left" Margin="226,61,0,0" VerticalAlignment="Top" Height="22" Width="105" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White"/>
+                <Button Name="advViewButton" Content="Advanced View" HorizontalAlignment="Left" Margin="286,5,0,0" VerticalAlignment="Top" Height="22" Width="105" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Bad Blocks" Style="{DynamicResource niceTabs}">
+            <TextBox x:Name="badBlockTxt" TextWrapping="Wrap" Background="#FF141414" BorderThickness="0" Foreground="White">
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF373737" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+        </TabItem>
+    </TabControl>
+
+</UserControl>

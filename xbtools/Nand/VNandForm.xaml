@@ -1,0 +1,22 @@
+﻿<Window x:Class="xbtools.Nand.VNandForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xbtools.Nand"
+        mc:Ignorable="d"
+        Title="VNandForm" Height="300" Width="536" Background="#FF141414" Loaded="Window_Loaded">
+    <Grid>
+        <ListBox SelectionChanged="listBoxConsoles_SelectionChanged" Name="listBoxConsoles" BorderThickness="1" Margin="10,10,376,10" Background="#FF232323" Foreground="White" BorderBrush="#FF373737"/>
+        <ListBox SelectionChanged="listBoxConfigs_SelectionChanged" x:Name="listBoxConfigs" BorderThickness="1" Margin="165,10,221,169" Background="#FF232323" Foreground="White" BorderBrush="#FF373737"/>
+        <TextBox Name="textBox1" HorizontalAlignment="Left" Margin="165,120,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="315" Style="{DynamicResource textBoxStyle}" Foreground="White"/>
+        <Button x:Name="btnSaveTo" Content="..." HorizontalAlignment="Left" Margin="485,120,0,0" VerticalAlignment="Top" Height="20" Width="41" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Click="btnSaveTo_Click"/>
+        <Button x:Name="btnRemoveBadBlock" Content="Remove Bad Block" HorizontalAlignment="Left" Margin="406,145,0,0" VerticalAlignment="Top" Height="20" Width="120" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Click="btnRemoveBadBlock_Click"/>
+        <Button x:Name="btnAddBadBlock" Content="Add Bad Block" HorizontalAlignment="Left" Margin="281,145,0,0" VerticalAlignment="Top" Height="20" Width="120" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Click="btnAddBadBlock_Click"/>
+        <ListBox x:Name="listBadBlocks" SelectionChanged="listBadBlocks_SelectionChanged" BorderThickness="1" Margin="165,145,306,10" Background="#FF232323" Foreground="White" BorderBrush="#FF373737"/>
+        <TextBox x:Name="txtBadBlock" HorizontalAlignment="Left" Margin="235,145,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="41" Style="{DynamicResource textBoxStyle}" Foreground="White"/>
+        <Button IsCancel="True" x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="426,254,0,0" VerticalAlignment="Top" Height="20" Width="100" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Click="btnCancel_Click"/>
+        <Button IsDefault="True" x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="321,254,0,0" VerticalAlignment="Top" Height="20" Width="100" Style="{DynamicResource roundBtn1}" Background="#FF232323" BorderBrush="#FF373737" Foreground="White" Click="btnOk_Click"/>
+
+    </Grid>
+</Window>
